@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GitHub Copilot Chat Exporter
 
 Export your GitHub Copilot chat conversations from your current workspace as clean, readable JSON files. Perfect for backing up your coding conversations or analyzing your development patterns.
