@@ -1,0 +1,32 @@
+# Source files (TypeScript)
+src/**
+tsconfig.json
+
+# Development files
+.vscode/**
+.gitignore
+.git/**
+
+# Node.js
+node_modules/**
+npm-debug.log*
+package-lock.json
+
+# Test files
+test/**
+**/test/**
+
+# Build artifacts not needed in package
+*.vsix
+extension/
+copilot_exports/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep these files in the package:
+# README.md (needed for marketplace)
+# LICENSE (needed for marketplace)
+# logo/ (needed for icon)
+# out/ (needed for compiled extension)
