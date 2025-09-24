@@ -1,0 +1,61 @@
+{
+  "name": "vscode-copilot-exporter",
+  "displayName": "Copilot Exporter",
+  "description": "Export GitHub Copilot interaction history from VSCode for analysis and backup",
+  "version": "0.0.1",
+  "publisher": "copilot-exporter",
+  "author": {
+    "name": "Copilot Exporter Team"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fzzzhan/vscode-copilot-exporter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fzzzhan/vscode-copilot-exporter/issues"
+  },
+  "homepage": "https://github.com/Fzzzhan/vscode-copilot-exporter#readme",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Data Science",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "copilot",
+    "github",
+    "ai",
+    "export",
+    "history",
+    "data",
+    "backup",
+    "analysis"
+  ],
+  "activationEvents": [
+    "onCommand:copilot-exporter.exportHistory"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copilot-exporter.exportHistory",
+        "title": "Export Copilot History",
+        "category": "Copilot Exporter"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "@types/vscode": "^1.74.0",
+    "typescript": "^4.9.4"
+  }
+}
