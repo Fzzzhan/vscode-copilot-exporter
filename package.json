@@ -1,8 +1,8 @@
 {
   "name": "vscode-copilot-exporter",
   "displayName": "GitHub Copilot Chat Exporter",
-  "description": "Export your GitHub Copilot chat conversations as clean, readable JSON files. Perfect for backing up conversations or analyzing development patterns.",
-  "version": "0.1.1",
+  "description": "Export your GitHub Copilot chat conversations as JSON or Markdown. Supports multi-workspace, date filters, VS Code Insiders, and user-configurable settings.",
+  "version": "0.2.0",
   "publisher": "fengzehan",
   "icon": "logo/icon.png",
   "repository": {
@@ -43,8 +43,8 @@
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@types/vscode": "^1.70.0",
-    "typescript": "^4.9.5",
-    "vsce": "1.103.1"
+    "@vscode/vsce": "^3.9.1",
+    "typescript": "^4.9.5"
   },
   "overrides": {
     "cheerio": "1.0.0-rc.12",
@@ -65,6 +65,37 @@
           "when": "true"
         }
       ]
+    },
+    "configuration": {
+      "title": "Copilot Chat Exporter",
+      "properties": {
+        "copilotExporter.outputDirectory": {
+          "type": "string",
+          "default": "",
+          "description": "Default output directory for exported files. Leave empty to use the workspace folder or home directory."
+        },
+        "copilotExporter.exportFormat": {
+          "type": "string",
+          "enum": [
+            "json",
+            "markdown",
+            "both"
+          ],
+          "enumDescriptions": [
+            "Export as a JSON file",
+            "Export as a Markdown file",
+            "Export as both JSON and Markdown files"
+          ],
+          "default": "json",
+          "description": "Default export format (can be overridden at export time)."
+        },
+        "copilotExporter.defaultDaysBack": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "description": "Default number of days back to filter conversations. Set to 0 to export all conversations."
+        }
+      }
     }
   }
 }
